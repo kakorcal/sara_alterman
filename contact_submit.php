@@ -9,17 +9,18 @@ Template Name: Contact Submit
 if(isset($_POST['url']) && $_POST['url'] == ''){
 	$field_name = $_POST['form_name'];
 	$field_email = $_POST['form_email'];
-	$field_comments = $_POST['form_comments'];
+	$field_requests = $_POST['form_requests'];
 	
-	$mail_to = 'kakorcal@gmail.com';
-	$subject = '*Site Visitor: '.$field_name." - ".$field_email;
+	$mail_to = 'sara@sarafaithalterman.com';
+	$subject = '**Sarafaithalterman.com visitor: '.$field_name;
 	
-	$body_message = 'Name: '.$field_name."\n";
+	$body_message  = 'Name: '.$field_name."\n";
 	$body_message .= 'Email: '.$field_email."\n";
-	$body_message .= 'Comments: '.$field_comments."\n";
+	$body_message .= 'Message: '.$field_requests."\n";
 	
-	$headers = 'From: '.$field_name."\r\n";
-	$headers .= 'Reply-To: '.$field_email."\r\n";
+	$headers  = 'From: webform@sarafaithalterman.com';
+	// $headers .= 'Subject: test';
+	// $headers .= 'To: sara@sarafaithalterman.com';
 	
 	$mail_status = mail($mail_to, $subject, $body_message, $headers);
 	
@@ -36,7 +37,7 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
 
 							<div class="wrapper contactFix">
 								<div class="thankYou">
-									<h1>Thank You For Your Request! Will Reply Shortly :)</h1>
+									<h1>Thank You For Your Message!</h1>
 									<div class="goBack">
 										<h2>
 											<a href="<?php echo home_url(); ?>">Go Back&raquo;</a>
@@ -68,7 +69,7 @@ if(isset($_POST['url']) && $_POST['url'] == ''){
 
 								<div class="wrapper contactFix">
 									<div class="thankYou">
-										<h1>Sorry, Delivery Failed. Please Contact The Following Email Address: <a href="kakorcal@gmail.com">kakorcal@gmail.com</a> </h1>
+										<h1>Sorry, delivery failed. Please try again later.</h1>
 										<div class="goBack">
 											<h2>
 												<a href="<?php echo home_url(); ?>">Go Back&raquo;</a>
@@ -101,7 +102,7 @@ else { ?>
 
 								<div class="wrapper contactFix">
 									<div class="thankYou">
-										<h1>Thank You For Your Request! Will Reply Shortly :)</h1>
+										<h1>Thank You For Your Message!</h1>
 										<div class="goBack">
 											<h2>
 												<a href="<?php echo home_url(); ?>">Go Back&raquo;</a>
